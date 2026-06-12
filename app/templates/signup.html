@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Sign up · LicenseLoop{% endblock %}
+{% block content %}
+<div class="max-w-md mx-auto mt-16 bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+    <h1 class="text-2xl font-extrabold">Create your account</h1>
+    {% if error %}<p class="mt-4 text-sm text-red-600 bg-red-50 rounded-lg p-3">{{ error }}</p>{% endif %}
+    <form method="post" action="/signup" class="mt-6 space-y-4">
+        <input name="email" type="email" required placeholder="you@business.com"
+            class="w-full border border-slate-300 rounded-lg px-4 py-3">
+        <input name="password" type="password" required minlength="8" placeholder="Password (8+ characters)"
+            class="w-full border border-slate-300 rounded-lg px-4 py-3">
+        <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Start
+            free</button>
+    </form>
+    <p class="mt-4 text-sm text-slate-500">Already have an account? <a href="/login"
+            class="text-indigo-600 font-semibold">Log in</a></p>
+</div>
+{% endblock %}
