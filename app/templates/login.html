@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Log in · LicenseLoop{% endblock %}
+{% block content %}
+<div class="max-w-md mx-auto mt-16 bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+    <h1 class="text-2xl font-extrabold">Welcome back</h1>
+    {% if error %}<p class="mt-4 text-sm text-red-600 bg-red-50 rounded-lg p-3">{{ error }}</p>{% endif %}
+    <form method="post" action="/login" class="mt-6 space-y-4">
+        <input name="email" type="email" required placeholder="you@business.com"
+            class="w-full border border-slate-300 rounded-lg px-4 py-3">
+        <input name="password" type="password" required placeholder="Password"
+            class="w-full border border-slate-300 rounded-lg px-4 py-3">
+        <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Log in</button>
+    </form>
+    <p class="mt-4 text-sm text-slate-500">New here? <a href="/signup" class="text-indigo-600 font-semibold">Create an
+            account</a></p>
+</div>
+{% endblock %}
